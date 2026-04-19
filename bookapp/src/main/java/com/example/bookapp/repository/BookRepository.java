@@ -1,0 +1,17 @@
+package com.example.bookapp.repository;
+
+import com.example.bookapp.entitiy.Book;
+import org.springframework.data.domain.Example;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import java.util.List;
+import java.util.Optional;
+
+public interface BookRepository extends JpaRepository <Book, Long>{
+    Optional<Book> findByTitle(String title);
+    List<Book> findByAuthor(String author);
+
+
+    Long id(Long id);
+}
+
